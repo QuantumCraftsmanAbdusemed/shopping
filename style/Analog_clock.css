@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background-color: #2f363e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  position: relative;
+  background-color: #2f363e;
+  box-shadow: 10px 50px 70px rgb(0, 0, 0, 0.5),
+    inset 5px 5px 10px rgb(255, 255, 255, 0.5),
+    inset 5px 5px 20px rgb(0, 0, 0, 0.5), inset -5px -5px rgb(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+.clock {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  border-radius: 225px;
+  background-color: #2f363e;
+  box-shadow: 10px 25px 75px rgb(0, 0, 0, 0.5), 10px 10px 70px rgb(0, 0, 0, 0.5),
+    inset 5px 5px 10px rgb(255, 255, 255, 0.5),
+    inset 5px 5px 20px rgb(0, 0, 0, 0.5), inset -5px -5px rgb(0, 0, 0, 0.75);
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.clock span {
+  position: absolute;
+  color: #fff;
+  inset: 20px;
+  text-align: center;
+  transform: rotate(calc(30deg * var(--r)));
+}
+.clock span b {
+  font-size: 26px;
+  font-weight: 600;
+  display: inline-block;
+  transform: rotate(calc(-30deg * var(--r)));
+}
+.clock::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #2f363e;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  z-index: 999999;
+}
+.circle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 2px solid rgb(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.circle::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--clr);
+  top: -8.5px;
+  box-shadow: 0 0 20px var(--clr), 0 0 60px var(--clr);
+}
+.clock i {
+  position: absolute;
+  width: 6px;
+  height: 50%;
+  background-color: var(--clr);
+  transform: scaleY(0.5);
+  opacity: 0.75;
+  transform-origin: bottom;
+  z-index: 10;
+}
+.circle:nth-child(1) i {
+  width: 2px;
+}
+.circle:nth-child(2) i {
+  width: 6px;
+}
+
+.circle2 {
+  width: 240px;
+  height: 240px;
+  z-index: 9;
+}
+.circle3 {
+  width: 180px;
+  height: 180px;
+  z-index: 8;
+}
+.time {
+  margin-bottom: 40px;
+  display: flex;
+  padding: 10px 20px;
+  border-radius: 40px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 30px;
+  box-shadow: 5px 5px 20px rgb(0, 0, 0, 0.5),
+    inset -5px -5px 15px rgb(255, 255, 255, 0.25);
+}
+.time div {
+  position: relative;
+  width: 60px;
+  color: var(--clr);
+}
+.time div:nth-child(1)::after,
+.time div:nth-child(2)::after {
+  content: ":";
+  position: absolute;
+  right: -4px;
+  transform: translateY(-10%);
+}
+.time div:nth-child(2)::after {
+  animation: animate 1s infinite;
+}
+.time #ampm {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  color: #fff;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}

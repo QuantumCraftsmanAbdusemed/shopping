@@ -1,0 +1,106 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #323232;
+  display: flex;
+  pad: 30px 0 0 0;
+  justify-content: center;
+}
+.wrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin-top: 80px;
+}
+.wrapper .container {
+  width: 100%;
+  height: 100%;
+  perspective: 800px;
+  perspective-origin: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .image_cube {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  transform-style: preserve-3d;
+  transition: 2s;
+
+  transform: translateZ(0);
+}
+.container .image_cube div {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+}
+.container .image_cube div img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+.front {
+  transform: translateZ(150px);
+}
+.back {
+  transform: translateZ(-150px) rotateY(180deg);
+}
+.left {
+  transform: translateX(-150px) rotateY(270deg);
+  transform-origin: 50% 0;
+}
+.right {
+  transform: translateX(150px) rotateY(270deg);
+  transform-origin: 50% 0;
+}
+.up {
+  transform: translateY(-150px) rotateX(-90deg);
+}
+.down {
+  transform: translateY(150px) rotateX(-90deg);
+}
+.buttons {
+  position: relative;
+  margin-top: 80px;
+  text-align: center;
+
+  height: 100px;
+}
+.buttons button {
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+  border-left: 3px solid #ff23ff;
+  border-top: 3px solid #ff23ff;
+  border-bottom: none;
+  border-right: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+.buttons button#left {
+  transform: rotate(-45deg);
+  position: absolute;
+  left: 70px;
+  top: 30%;
+}
+.buttons button#right {
+  transform: rotate(136deg);
+  position: absolute;
+  right: 40px;
+  top: 30%;
+}
+.buttons button#down {
+  transform: rotate(225deg);
+  position: absolute;
+  bottom: 0;
+}
+.buttons button#up {
+  transform: rotate(45deg);
+  position: absolute;
+  top: -10px;
+}

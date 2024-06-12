@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman";
+  user-select: none;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 100px;
+  background: linear-gradient(to bottom right, #667eea, #764ba2);
+}
+
+.todo_app {
+  width: 100%;
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 20px 30px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 15px 30px 20px rgba(0, 0, 0, 0.3);
+}
+.container h3 {
+  font-size: 50px;
+  font-weight: 700;
+  color: green;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.input_content {
+  width: 100%;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+
+.input_content input {
+  padding: 15px;
+  font-size: 25px;
+  font-weight: 600;
+  color: gray;
+  outline: none;
+  border-radius: 12px;
+  width: 70%;
+  text-transform: capitalize;
+}
+.input_content input::placeholder {
+  font-size: 18px;
+  color: #000;
+  opacity: 0.65;
+}
+.input_content button {
+  padding: 18px 60px;
+  background-color: green;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.task_list_content {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 5% 50% 15% 20%;
+  align-items: center;
+}
+
+.task_list h2 {
+  font-size: 25px;
+  color: #ff6dee;
+  margin-bottom: 15px;
+}
+#edit_btn {
+  padding: 10px 15px;
+  background: green;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+#delete_btn {
+  padding: 12px 20px;
+  background-color: darkred;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+#item_value {
+  font-size: 30px;
+  text-transform: capitalize;
+}
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+input[type="checkbox"] {
+  display: none;
+}
+.bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.bubble::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  background-color: rgb(64, 64, 234);
+  border-radius: 50%;
+  transition: 0.2s ease-in-out;
+}
+
+input:checked ~ .bubble::after {
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+}
+
+.error {
+  color: rgb(225, 68, 68);
+  font-size: 20px;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+.hide {
+  display: none;
+}
+.input_value {
+  padding: 15px 20px;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  font-size: 25px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+@media (max-width: 650px) {
+  .container {
+    padding: 30px;
+  }
+  .todo_app {
+    width: 100%;
+  }
+  .input_content {
+    display: flex;
+    flex-direction: column;
+  }
+  .input_content button,
+  .input_content input {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media (max-width: 580px) {
+  #edit_btn,
+  #delete_btn {
+    font-size: 15px;
+  }
+  .input_value {
+    font-size: 15px;
+  }
+}
+@media (max-width: 450px) {
+  .container {
+    padding: 10px;
+  }
+  .todo_app {
+    width: 100%;
+  }
+  #edit_btn,
+  #delete_btn {
+    padding: 5px;
+    font-size: 15px;
+  }
+  .input_value {
+    padding: 5px;
+    font-size: 15px;
+  }
+  .done {
+    text-decoration: line-through;
+  }
+  input:checked ~ .bubble::after {
+    width: 6px;
+    height: 6px;
+  }
+  .task_list_content {
+    padding: 0 12px;
+  }
+}

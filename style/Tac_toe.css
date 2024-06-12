@@ -1,0 +1,116 @@
+* {
+  transition: 0.3s ease-in-out;
+}
+body {
+  background-color: #252a34;
+  color: #fff;
+  text-align: center;
+  padding-top: 5vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+.container {
+  position: relative;
+  width: 170px;
+  height: 90px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.container h2 {
+  margin: 0 auto;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.container .turn_box {
+  position: relative;
+  border: 3px solid #000000;
+  font-size: 23px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #ff2a63;
+  height: 40px;
+  width: 85px;
+  z-index: -1;
+}
+.turn_box:nth-child(even) {
+  border-right: none;
+}
+.align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main_box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  height: 250px;
+  width: 250px;
+  margin: 30px auto;
+  border: 2px solid #000000;
+}
+.main_box .box {
+  font-size: 30px;
+  font-weight: 700;
+  border: 2px solid #000000;
+  cursor: pointer;
+}
+.main_box .box:hover {
+  background-color: #ff2a63;
+}
+.result {
+  font-size: 25px;
+  font-weight: 700;
+}
+#play_again {
+  margin: 20px 0;
+  background-color: #ff2a63;
+  padding: 10px 25px;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #ffff;
+  display: none;
+}
+#play_again:hover {
+  background-color: #08d9d6;
+  padding: 10px 40px;
+  color: #000000;
+}
+#resultForm {
+  color: #08d9d6;
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 5px;
+}
+#scoreForm {
+  color: #08d9d6;
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 20px;
+}
+.score {
+  margin: 10px 0 10px 0;
+}
+.reset_btn {
+  background-color: #fff;
+  padding: 10px 25px;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #000000;
+  display: inline-block;
+}

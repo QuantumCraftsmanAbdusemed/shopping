@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo_list2</title>
+    <link rel="stylesheet" href="style/Todo_list2.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <h3>Todo-List</h3>
+        <div class="input_box">
+          <input
+            type="text"
+            id="todo_input_value"
+            placeholder="Enter Your Todo_list"
+          />
+          <button id="Add_todo">Add</button>
+        </div>
+        <p class="error hide" id="errorMessage">Please Enter Todo list !</p>
+        <div class="controls">
+          <div class="filters">
+            <span id="all" class="active">All</span>
+            <span id="pending">Pending</span>
+            <span id="completed">Completed</span>
+          </div>
+          <button id="clear_btn">Clear</button>
+        </div>
+        <div class="task_box"></div>
+      </div>
+    </div>
+    <script src="js/Todo_list2.js"></script>
+  </body>
+</html>
